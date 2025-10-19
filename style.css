@@ -1,0 +1,89 @@
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient-animation 15s ease infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+}
+#calculator {
+    background: rgba(34, 34, 34, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#calculator:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+#display {
+    width: 100%;
+    font-size: 2em;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    text-align: right;
+    background: #333;
+    color: #fff;
+}
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    gap: 10px;
+}
+button {
+    font-size: 1.2em;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    background: #444;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+button:hover {
+    background: #666;
+}
+button.equals {
+    grid-column: span 2;
+    background: #0a7cff;
+    color: #fff;
+}
+button.equals:hover .stars{
+    display: block;
+    filter: drop-shadow(0 0 10px #00181e);
+}
+button.zero {
+    grid-column: span 2;
+}
+h1{
+    color: rgb(255, 255, 255);
+}
+button.active {
+    background-color: #ffd700;
+    color: #222;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #ffd700;
+    transition: all 0.1s;
+}
